@@ -78,11 +78,13 @@ class DisplayDrumMachine extends React.Component {
         }
     };
     render(){
-        return (
+       return (
             <div>
                 {drumPads(this.updateDisplay)}
-                <div id="display">
-                    <input type="text" value={this.state.display} readOnly/>
+                <div id="display-div">
+                    <h3 id="display">
+                        {this.state.display}
+                    </h3>
                 </div>
             </div>
         )

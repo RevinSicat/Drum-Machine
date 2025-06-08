@@ -1,3 +1,4 @@
+/* General Page Setup */
 body {
     width: 100vw;
     height: 100vh;
@@ -16,6 +17,7 @@ h3 {
     color: #333;
 }
 
+/* Drum Machine Main Container */
 #drum-machine {
     border: 2px solid #333;
     border-radius: 10px;
@@ -24,25 +26,30 @@ h3 {
     padding: 20px;
     background-color: #e0e0e0;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
-
-#drum-machine div {
-    width: 100%;
-    height: 100%;
     display: flex;
-    flex-direction: row;
-    align-items: center;
+    flex-direction: column;
     justify-content: space-between;
 }
 
+/* Inner Layout Container */
+#drum-machine > div {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Drum Pad Container */
 #drum-pad-div {
     display: flex;
-    gap: 10px;
     flex-wrap: wrap;
+    gap: 10px;
     width: 60%;
     height: 100%;
 }
 
+/* Drum Pad Buttons */
 .drum-pad {
     width: 30%;
     height: 30%;
@@ -68,52 +75,49 @@ h3 {
     background-color: #f5f5f5;
     transform: scale(0.98);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    color: #000;
+}
+
+/* Display Panel */
+#display-div {
+    width: 38%;
+    height: 100%;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #display {
-    width: 35%;
-    height: 100%;
-    display: grid;
-    place-items: center;
-    position: relative;
-}
-
-#display input {
-    width: 80%;
-    height: 50px;
-    border: 3px solid #333;
-    border-radius: 5px;
-    background-color: #333;
-    color: #f5f5f5;
-    font-size: 1.2rem;
+    width: 70%;
+    height: 7.5%;
+    padding: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    font-size: 1.5rem;
     font-weight: bold;
     text-align: center;
-    padding: 5px;
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
 }
 
-/* Responsive adjustments */
+/* Responsive Design */
 @media (max-width: 768px) {
-#drum-machine {
-    width: 90vw;
-    height: 80vh;
-    flex-direction: column;
-}
+    #drum-machine {
+        width: 90vw;
+        height: 80vh;
+    }
 
-#drum-machine div {
-    flex-direction: column;
-}
+    #drum-machine > div {
+        flex-direction: column;
+    }
 
-#drum-pad-div, #display {
-    width: 100%;
-}
+    #drum-pad-div {
+        width: 100%;
+        height: 60%;
+    }
 
-#display {
-    height: 20%;
-    margin-top: 20px;
-}
+    #display-div {
+        width: 100%;
+        height: 30%;
+        margin-top: 20px;
+    }
 }
